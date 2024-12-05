@@ -19,7 +19,7 @@ if __name__=='__main__':
     maxEvaluation = args.maxEval
     number_of_seed = args.nSeed
     maxPunishment = args.maxPunishment
-    basic = args.basic
+    basic = args.dataset
     path = "Input/" + basic + '.txt'
     f = open(path, "r")
     instance = []
