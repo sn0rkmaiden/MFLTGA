@@ -14,11 +14,12 @@ if __name__=='__main__':
     parser.add_argument("--nSeed",type=int,default=1)
     parser.add_argument("--maxPunishment",type=int,default=3)
     parser.add_argument("--dataset",type=str,default="Type_1_Small")
+    parser.add_argument("--path", type=str, default="")
     args = parser.parse_args()
     popSize = args.popSize
     maxEvaluation = args.maxEval
     number_of_seed = args.nSeed
-    maxPunishment = args.maxPunishment
+    maxPunishment = args.maxPunishment    
     basic = args.dataset
     path = "Input/" + basic + '.txt'
     f = open(path, "r")
@@ -28,7 +29,8 @@ if __name__=='__main__':
         if x == "EOF":
             break
         instance.append(x)
-    outputPath = 'Result'+ '/' + basic + '/Para_File(MFLTGA_Clus_Tree)'
+    # outputPath = 'Result'+ '/' + basic + '/Para_File(MFLTGA_Clus_Tree)'
+    outputPath = args.path
 
     for a in range(0, len(instance), 2):
         task1 = instance[a]
